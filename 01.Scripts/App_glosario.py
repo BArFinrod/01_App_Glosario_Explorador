@@ -24,7 +24,7 @@ st.set_page_config(layout="wide")
 #%%
 
 path_str = Path(__file__).parent.parent
-# key_ = st.secrets["akey"]
+key_ = st.secrets["akey"]
 
 openai.api_key = key_
 #%%
