@@ -38,7 +38,7 @@ def _get_similitud(x, emb):
 
 @st.cache_data
 def _find(str_buscado, dfglos):
-    emb_buscar = get_embedding(str_buscado, engine="text-embedding-ada-002")
+    emb_buscar = get_embedding(str_buscado, model="text-embedding-ada-002")
         # calcular distancias/similitud
     dfglos['similitud'] = dfglos['embedding'].apply(_get_similitud, args=(emb_buscar,))
     dffinded = dfglos.loc[dfglos['similitud']>0.8].sort_values(['similitud'], ascending=False)
