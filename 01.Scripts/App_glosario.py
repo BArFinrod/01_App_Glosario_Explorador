@@ -38,9 +38,9 @@ def _find(str_buscado, dfglos):
 
 #%%
 # procesos
-dfproc = pd.read_excel(path_str / "00.Data/04. Procesos_codigos_nombres.xlsx", sheet_name='Hoja1')
+dfproc = pd.read_excel(path_str / "00. Data/04. Procesos_codigos_nombres.xlsx", sheet_name='Hoja1')
 
-dfglos = pd.read_pickle(path_str /"00.Data/dfglos_embedd_clustered.pickle")
+dfglos = pd.read_pickle(path_str /"00. Data/dfglos_embedd_clustered.pickle")
 dfglos = dfglos.rename({'codigo termino':'Código','termino':'Nombre','definicion termino':'Definición'}, axis=1)
 
 #%%
