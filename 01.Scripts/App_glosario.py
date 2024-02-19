@@ -14,7 +14,7 @@ from pathlib import Path
 import openai
 from openai import OpenAI
 
-client = OpenAI()
+
 
 def get_embedding(text, model="text-embedding-3-small"):
    text = text.replace("\n", " ")
@@ -26,7 +26,8 @@ st.set_page_config(layout="wide")
 path_str = Path(__file__).parent.parent
 key_ = st.secrets["akey"]
 
-openai.api_key = key_
+client = OpenAI(api_key = key_)
+# openai.api_key = key_
 #%%
 def _from_stringlist_to_array(serie):
     return serie.map(lambda x: np.array(eval(x)))
