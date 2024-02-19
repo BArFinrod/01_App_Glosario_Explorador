@@ -7,11 +7,18 @@ import numpy as np
 # import pdb
 import streamlit as st
 from streamlit_tree_select import tree_select
-from openai.embeddings_utils import get_embedding
+# from openai.embeddings_utils import get_embedding
 # import tiktoken
 from scipy.spatial import distance
 from pathlib import Path
 import openai
+from openai import OpenAI
+
+client = OpenAI()
+
+def get_embedding(text, model="text-embedding-3-small"):
+   text = text.replace("\n", " ")
+   return client.embeddings.create(input = [text], model=model).data[0].embedding
 
 st.set_page_config(layout="wide")
 #%%
@@ -38,9 +45,9 @@ def _find(str_buscado, dfglos):
 
 #%%
 # procesos
-dfproc = pd.read_excel(path_str / "00. Data/04. Procesos_codigos_nombres.xlsx", sheet_name='Hoja1')
+dfproc = pd.read_excel(path_str / "00.Data/04. Procesos_codigos_nombres.xlsx", sheet_name='Hoja1')
 
-dfglos = pd.read_pickle(path_str /"00. Data/dfglos_embedd_clustered.pickle")
+dfglos = pd.read_pickle(path_str /"00.Data/dfglos_embedd_clustered.pickle")
 dfglos = dfglos.rename({'codigo termino':'Código','termino':'Nombre','definicion termino':'Definición'}, axis=1)
 
 #%%
