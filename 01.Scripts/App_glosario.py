@@ -97,7 +97,7 @@ col2.metric(label="Términos en total", value=terms_total)
 explorer, table = st.columns((1,3))
 
 with explorer:
-    st.text("Términos agrupados por dominios de datos")
+    st.text("Términos agrupados\npor dominios de datos")
     return_select = tree_select(tree)
 
 with table:
