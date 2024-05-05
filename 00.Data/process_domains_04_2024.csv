@@ -1,0 +1,53 @@
+Cod_new	Nombre_new	Cod_new	Nombre_new	Cod_new	Cod	Nombre_new
+DE	Estratégicos	DE01	Política	DE01.01	PE01.01	Modelo de la prospectiva de la educación
+DE	Estratégicos	DE01	Política	DE01.02	PE01.02	Política del sector
+DE	Estratégicos	DE02	Plan institucional	DE02.01	PE02.01	Plan estratégico sectorial e institucional
+DE	Estratégicos	DE02	Plan institucional	DE02.02	PE02.02	Plan operativo institucional
+DE	Estratégicos	DE03	Mejora continua e innovación institucional	DE03.01	PE03.01	Organización administrativa
+DE	Estratégicos	DE03	Mejora continua e innovación institucional	DE03.02	PE03.02	Proceso
+DE	Estratégicos	DE03	Mejora continua e innovación institucional	DE03.03	PE03.03	Innovación educativa
+DE	Estratégicos	DE04	Estrategia de comunicación, cooperación y relación internacional	DE04.01	PE04.01	Estrategia de comunicación
+DE	Estratégicos	DE04	Estrategia de comunicación, cooperación y relación internacional	DE04.02	PE04.02	Comunidad de actores sociedad civil, sector empresarial y organismos de cooperación internacional
+DE	Estratégicos	DE04	Estrategia de comunicación, cooperación y relación internacional	DE04.03	PE04.03	Relación interinstitucional, intergubernamental e internacional
+DE	Estratégicos	DE05	Control y riesgo	DE05.01	PE05.01	Control institucional
+DE	Estratégicos	DE05	Control y riesgo	DE05.02	PE05.02	Riesgo organizacional
+DE	Estratégicos	DE05	Control y riesgo	DE05.03	PE05.03	Riesgo social
+DE	Estratégicos	DE05	Control y riesgo	DE05.04	PE05.04	Riesgo de desastre
+DO	Operativos	DO01	Servicio educativo	DO01.E2	PO01.E2	Currícula
+DO	Operativos	DO01	Servicio educativo	DO01.02	PO01.02	Diseño y planificación del servicio educativo
+DO	Operativos	DO01	Servicio educativo	DO01.03	PO01.03	Regulaciones del servicio educativo
+DO	Operativos	DO01	Servicio educativo	DO01.06	PO01.06	Evaluación del servicio educativo
+DO	Operativos	DO01	Servicio educativo	DO01.07	PO01.07	Aseguramiento de la calidad educativa
+DO	Operativos	DO01	Servicio educativo	DO01.05	PO01.05	Beca y crédito
+DO	Operativos	DO01	Servicio educativo	DO01.E1	PO01.E1	Estudiante
+DO	Operativos	DO02	Recurso para el aprendizaje	DO02.01	PO02.01	Recurso para el aprendizaje
+DO	Operativos	DO03	Docente	DO03.E3	PO03.E3	Docente
+DO	Operativos	DO03	Docente	DO03.01	PO03.01	Cargo y plaza
+DO	Operativos	DO03	Docente	DO03.02	PO03.02	Empleo y compensación del personal docente
+DO	Operativos	DO03	Docente	DO03.03	PO03.03	Formación del personal
+DO	Operativos	DO03	Docente	DO03.04	PO03.04	Evaluación de docentes
+DO	Operativos	DO03	Docente	DO03.05	PO03.05	Atracción, el bienestar y reconocimiento del personal
+DO	Operativos	DO04	Infraestructura educativa	DO04.E4	PO04.E4	Institución educativa
+DO	Operativos	DO04	Infraestructura educativa	DO04.02	PO04.02	Saneamiento físico legal de predios
+DO	Operativos	DO04	Infraestructura educativa	DO04.03	PO04.03	Documento técnico
+DO	Operativos	DO05	Territorial	DO05.01	PO05.01	Licenciamiento, reconocimiento y optimización
+DO	Operativos	DO05	Territorial	DO05.02	PO05.02	Supervisión
+DO	Operativos	DO05	Territorial	DO05.03	PO05.03	Gestión institucional
+DS	Soporte	DS01	Recurso humano	DS01.01	PS01.01	Organización del trabajo
+DS	Soporte	DS01	Recurso humano	DS01.02	PS01.02	Personal
+DS	Soporte	DS01	Recurso humano	DS01.03	PS01.03	Talento
+DS	Soporte	DS01	Recurso humano	DS01.04	PS01.04	Compensación
+DS	Soporte	DS01	Recurso humano	DS01.05	PS01.05	Relación humana y social
+DS	Soporte	DS02	Recurso Financiero	DS02.01	PS02.01	Ingreso
+DS	Soporte	DS02	Recurso Financiero	DS02.02	PS02.02	Egreso
+DS	Soporte	DS02	Recurso Financiero	DS02.03	PS02.03	Proceso contable
+DS	Soporte	DS03	Abastecimiento	DS03.01	PS03.01	Contratación
+DS	Soporte	DS03	Abastecimiento	DS03.03	PS03.03	Almacenamiento y distribución
+DS	Soporte	DS03	Abastecimiento	DS03.04	PS03.04	Bien patrimonial
+DS	Soporte	DS03	Abastecimiento	DS03.05	PS03.05	Servicio general
+DS	Soporte	DS04	Tecnología de información y comunicación	DS04.01	PS04.01	Proyecto de tecnologías de información y comunicación
+DS	Soporte	DS04	Tecnología de información y comunicación	DS04.02	PS04.02	Continuidad operativa de tecnologías de información y comunicación
+DS	Soporte	DS05	Asunto jurídico	DS05.01	PS05.01	Asesoramiento jurídico - legal
+DS	Soporte	DS05	Asunto jurídico	DS05.02	PS05.02	Defensa jurídica
+DS	Soporte	DS06	Atención al ciudadano y archivo	DS06.01	PS06.01	Atención al Ciudadano
+DS	Soporte	DS06	Atención al ciudadano y archivo	DS06.02	PS06.02	Archivo
