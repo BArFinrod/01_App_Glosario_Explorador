@@ -79,7 +79,7 @@ col1, col2, col3 = st.columns(3)
 
 col1.image(image, width=200)
 col1.title("Glosario de términos del MINEDU")
-col1.subheader("Equipo de Gobierno de Datos")
+col1.subheader("Equipo de Gobierno\nde Datos")
 col1.text("Versión 1.0 (mayo de 2024)")
 
 # términos en total##################
