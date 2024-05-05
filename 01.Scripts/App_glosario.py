@@ -13,9 +13,8 @@ from scipy.spatial import distance
 from pathlib import Path
 import openai
 from openai import OpenAI
-
+from PIL import Image
 #%%
-
 
 def get_embedding(text, model="text-embedding-3-small"):
    text = text.replace("\n", " ")
@@ -23,6 +22,16 @@ def get_embedding(text, model="text-embedding-3-small"):
 
 st.set_page_config(layout="wide")
 #%%
+st.markdown(
+    """
+<style>
+[data-testid="stMetricValue"] {
+    font-size: 100px;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
 
 path_str = Path(__file__).parent.parent
 key_ = st.secrets["akey"]
@@ -62,12 +71,31 @@ with open(path_str / "00.Data/06._Tree_dominios.pickle",'rb') as f:
     tree = pickle.load(f)
 
 # %%
-st.title("Glosario de términos del MINEDU")
-st.subheader("Equipo de Gobierno de Datos")
+image = Image.open(path_str / '00.Data/Logo_minedu.png')
+
+col1, col2, col3 = st.columns(3)
+
+col1.image(image, width=350)
+col1.title("Glosario de términos del MINEDU")
+col1.subheader("Equipo de Gobierno de Datos")
+col1.text("Versión 1.0 (05/05/2024)")
+
+# términos en total##################
+terms_total = dfglos.shape[0]
+col2.metric(label="Términos en total", value=terms_total)
+
+# try:
+#     terms_subtotal = subtable.shape[0]
+# except:
+#     terms_subtotal = terms_total
+# terms_total = dfglos.shape[0]
+# col3.metric(label="Términos seleccionados", value=terms_subtotal)
+###########################
 
 explorer, table = st.columns((1,3))
 
 with explorer:
+    st.text("Términos agrupados por dominios de datos")
     return_select = tree_select(tree)
 
 with table:
@@ -87,4 +115,5 @@ with table:
         subtable = dfglos.loc[dfglos['Dom_n1_cod'].apply(lambda x: x in selected),['Código','Nombre','Definición']]
         st.table(subtable)
     
-
+terms_subtotal = subtable.shape[0]
+col3.metric(label="Términos seleccionados", value=terms_subtotal)
