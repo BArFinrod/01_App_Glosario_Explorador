@@ -14,6 +14,8 @@ from pathlib import Path
 import openai
 from openai import OpenAI
 from PIL import Image
+from io import BytesIO
+from datetime import datetime
 #%%
 
 def get_embedding(text, model="text-embedding-3-small"):
@@ -78,7 +80,7 @@ col1, col2, col3 = st.columns(3)
 col1.image(image, width=200)
 col1.title("Glosario de términos del MINEDU")
 col1.subheader("Equipo de Gobierno de Datos")
-col1.text("Versión 1.0 (05/05/2024)")
+col1.text("Versión 1.0 (mayo de 2024)")
 
 # términos en total##################
 terms_total = dfglos.shape[0]
@@ -100,7 +102,7 @@ with explorer:
 
 with table:
     selected = return_select['checked'] #.values())
-    str_buscar = st.text_input("Búsqueda de términos con AI")
+    str_buscar = st.text_input("Búsqueda de términos con IA")
     bool_buscar = st.button("Buscar")
     # st.text(bool_buscar)
     # st.text(str_buscar!="")
@@ -108,12 +110,31 @@ with table:
         dffinded = _find(str_buscar, dfglos)
         # ordenar la base
         subtable = dffinded.loc[dffinded['Dom_n1_cod'].apply(lambda x: x in selected),['Código','Nombre','Definición']]
-        st.table(subtable)
+        st.dataframe(subtable, hide_index=True, use_container_width=True)#, width=2000)
     else:
         # if buscar, get embedding, get normas, ordenar de mayor a menor similaridad
         # quedarnos con los mayores a 4 # da igual ya que usamos in
         subtable = dfglos.loc[dfglos['Dom_n1_cod'].apply(lambda x: x in selected),['Código','Nombre','Definición']]
-        st.table(subtable)
+        st.dataframe(subtable, hide_index=True, use_container_width=True)#, width=2000)
     
 terms_subtotal = subtable.shape[0]
 col3.metric(label="Términos seleccionados", value=terms_subtotal)
+
+@st.cache_data
+def to_excel(df):
+    output = BytesIO()
+    writer = pd.ExcelWriter(output, engine='xlsxwriter')
+    df.to_excel(writer, index=False)
+    writer.save()
+    processed_data = output.getvalue()
+    return processed_data
+
+try:
+    df_xlsx = to_excel(subtable)
+    today = str(datetime.today())
+    table.download_button(label='📥 Descargar términos seleccionados (.xlsx)',
+                                data=df_xlsx ,
+                                file_name= f'Glosario_05_2024_descargado_en_{today}.xlsx')
+except:
+    table.text("La tabla está vacía")
+    
