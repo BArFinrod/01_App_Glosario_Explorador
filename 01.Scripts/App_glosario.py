@@ -97,7 +97,7 @@ col2.metric(label="Términos en total", value=terms_total)
 explorer, table = st.columns((1,3))
 
 with explorer:
-    st.text("Términos agrupados\npor dominios de datos")
+    st.text("Términos agrupados\npor Dominios de Datos")
     return_select = tree_select(tree)
 
 with table:
@@ -110,11 +110,15 @@ with table:
         dffinded = _find(str_buscar, dfglos)
         # ordenar la base
         subtable = dffinded.loc[dffinded['Dom_n1_cod'].apply(lambda x: x in selected),['Código','Nombre','Definición']]
+        if subtable.shape[0]==0:
+            st.warning("Seleccione alguno de los Dominios en el panel de la izquierda para que se muestren los resultados.", icon="⚠️")
         st.dataframe(subtable, hide_index=True, use_container_width=True)#, width=2000)
     else:
         # if buscar, get embedding, get normas, ordenar de mayor a menor similaridad
         # quedarnos con los mayores a 4 # da igual ya que usamos in
         subtable = dfglos.loc[dfglos['Dom_n1_cod'].apply(lambda x: x in selected),['Código','Nombre','Definición']]
+        if subtable.shape[0]==0:
+            st.warning("Seleccione alguno de los Dominios en el panel de la izquierda para que se muestren los resultados.", icon="⚠️")
         st.dataframe(subtable, hide_index=True, use_container_width=True)#, width=2000)
     
 terms_subtotal = subtable.shape[0]
